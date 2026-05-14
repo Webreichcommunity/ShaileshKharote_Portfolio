@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* App base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-[#1C2833] antialiased;
+}
+
+/* Hide Google Translate UI chrome (we drive language switching ourselves) */
+.goog-te-banner-frame,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+iframe.goog-te-banner-frame {
+  display: none !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+html,
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+.goog-te-gadget > span,
+.goog-te-gadget .goog-te-menu-value {
+  display: none !important;
+}
+
