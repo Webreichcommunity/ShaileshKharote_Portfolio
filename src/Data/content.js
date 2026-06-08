@@ -27,29 +27,38 @@ export const personalInfo = {
   ]
 };
 
+export const brandStory = {
+  name: "S S Kharote Suvarnakar",
+  startYear: "1993",
+  slogan: "Pardarshi Vyavhar Hach Amcha Manas",
+  sloganMr: "पारदर्शी व्यवहार हाच आमचा मानस",
+  principles: ["Shuddhata", "Pardarshakta", "Trust", "Own craftsmanship"],
+  summary: "The journey of S S Kharote Suvarnakar began in 1993 with karagiri, a small shop in Jaju Market, and a workshop where jewellery was crafted by hand. The business grew through struggle, purity, transparency, and trusted dealings, later opening the S S Kharote Suvarnakar showroom in 2010.",
+};
+
 export const journey = [
   {
-    year: "2000",
-    title: "Foundation",
-    description: "Started S S Kharote Suvarnakar with a vision of purity and trust in jewellery business.",
+    year: "1993",
+    title: "Karagiri and Humble Beginning",
+    description: "The business journey began with karagiri, a small shop in Jaju Market, and a workshop where jewellery was made with his own hands.",
     descriptionMr: "शुद्धता आणि विश्वासाच्या दृष्टीकोनातून एस एस खरोटे सुवर्णकारची सुरुवात."
   },
   {
-    year: "2005",
-    title: "Growth Phase",
-    description: "Expanded business operations and established strong customer base in Akola region.",
+    year: "1993-2009",
+    title: "Struggle, Skill, and Trust",
+    description: "Through years of struggle and steady growth, the workshop became known for handmade jewellery, shuddhata, pardarshakta, and trusted customer relationships.",
     descriptionMr: "अकोला परिसरात व्यवसाय विस्तार आणि मजबूत ग्राहक आधार स्थापन."
   },
   {
     year: "2010",
-    title: "Industry Leadership",
-    description: "Elected as President of Akola Sarafa Association (unopposed).",
+    title: "S S Kharote Suvarnakar Showroom",
+    description: "After years of dedication, the shop was transformed into a showroom under the name S S Kharote Suvarnakar, carrying forward purity, transparency, and handcrafted quality.",
     descriptionMr: "अकोला सराफा असोसिएशनचे अध्यक्ष म्हणून बिनविरोध निवड."
   },
   {
     year: "2015",
-    title: "Social Leadership",
-    description: "Appointed as President of Akola Suvarna Samaj, strengthening community bonds.",
+    title: "Industry and Social Leadership",
+    description: "Leadership grew beyond business through service to the Sarafa and Suvarnakar community, strengthening trust and ethical practices.",
     descriptionMr: "अकोला सुवर्ण समाजाचे अध्यक्ष म्हणून नियुक्ती, समाज बंध मजबूत."
   },
   {
@@ -104,45 +113,45 @@ export const mediaLinks = [
 export const events = [
   {
     id: 1,
-    title: "Maharashtra Icon Award Ceremony",
+    title: "All India Gem and Jewellery Domestic Council (GJC)",
     date: "2023",
-    description: "Received prestigious Maharashtra Icon award for business excellence.",
+    description: "Meeting with the All India Gem and Jewellery Domestic Council.",
     image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778677767/WhatsApp_Image_2026-05-12_at_4.48.01_PM_sfdaqr.jpg"
   },
   {
     id: 2,
-    title: "Jewellery Exhibition 2023",
+    title: "Representation Regarding Issues Related to Pledged Gold",
     date: "2023",
-    description: "Organized grand jewellery exhibition in Akola.",
+    description: "A representation was submitted to the Personal Assistant of Shri Devendra Fadnavis seeking an inquiry, verification, and resolution of issues related to pledged gold..",
     image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778765352/WhatsApp_Image_2026-05-12_at_4.47.59_PM_pzorw6.jpg"
   },
   {
     id: 3,
-    title: "Community Service Event",
+    title: "Welcome and Felicitation",
     date: "2022",
-    description: "Led community service initiative for underprivileged.",
-    image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778765351/WhatsApp_Image_2026-05-12_at_4.48.02_PM_uvqc7g.jpg"
+    description: "Welcome and Felicitation of Vigilance Committee Guests.",
+    image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778677767/WhatsApp_Image_2026-05-12_at_4.48.00_PM_t9otkn.jpg"
   },
   {
     id: 4,
-    title: "Trade Conference",
+    title: "Felicitation and Welcome of Chitra Tai Wagh",
     date: "2022",
-    description: "Keynote speaker at jewellery trade conference.",
+    description: "Felicitation and Welcome of Chitra Tai Wagh.",
     image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778765352/WhatsApp_Image_2026-05-12_at_4.48.01_PM_1_dtzfad.jpg"
   },
    {
     id: 5,
-    title: "Second Trade Conference",
+    title: "Submission of Memorandum by Maharashtra Sonar Association to the Administration Regarding Gold Valuation",
     date: "2022",
-    description: "Keynote speaker at jewellery trade conference.",
+    description: "Submission of Memorandum by Maharashtra Sonar Association to the Administration Regarding Gold Valuation",
     image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778765352/WhatsApp_Image_2026-05-12_at_4.48.00_PM_1_tjijtm.jpg"
   },
    {
     id: 6,
-    title: "Lokmat Event",
-    date: "2022",
-    description: "Keynote speaker at jewellery trade conference.",
-    image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778765351/WhatsApp_Image_2026-05-12_at_4.48.02_PM_1_jbwegw.jpg"
+    title: "Grand Gathering of the Sonar Community",
+    date: "",
+    description: "Grand Gathering of the Sonar Community.",
+    image: "https://res.cloudinary.com/dvfa1ub9w/image/upload/v1780904813/WhatsApp_Image_2026-06-01_at_7.24.21_PM_oe80xb.jpg"
   }
 ];
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../Data/content';
 import { FiClock, FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
@@ -13,7 +12,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-[#F4F6F6]">
+    <div className="section-surface">
       <PageHero title="Contact" subtitle="Connect for business, collaboration, or community initiatives." />
 
       <section className="py-14 sm:py-16 lg:py-20">
@@ -29,10 +28,10 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-40px' }}
                     transition={{ duration: 0.5, ease: 'easeOut', delay: Math.min(index * 0.05, 0.2) }}
-                    className="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-xl shadow-[#1C2833]/5 border border-[#AAB7B8]/10"
+                    className="flex items-start gap-4 p-5 premium-panel rounded-2xl"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-[#1C2833]/5 border border-[#AAB7B8]/15 flex items-center justify-center flex-shrink-0">
-                      <info.icon className="text-[#2E4053]" size={18} />
+                    <div className="w-11 h-11 rounded-xl bg-[#C79A43]/10 border border-[#C79A43]/20 flex items-center justify-center flex-shrink-0">
+                      <info.icon className="text-[#B8872E]" size={18} />
                     </div>
                     <div className="min-w-0">
                       <p className="text-[11px] text-[#2E4053]/60 uppercase tracking-wider">{info.label}</p>
@@ -52,7 +51,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl shadow-[#1C2833]/5 border border-[#AAB7B8]/10 p-8">
+            <div className="premium-panel rounded-2xl p-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-[#1C2833] mb-2">Send a Message</h2>
               <p className="text-sm text-[#2E4053]/70 mb-8 font-light">
                 Share a brief note and we’ll get back to you as soon as possible.
@@ -63,7 +62,7 @@ const Contact = () => {
                   <label className="block text-sm text-[#2E4053]/80 font-medium mb-2">Full Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-[#AAB7B8]/30 bg-white focus:outline-none focus:ring-2 focus:ring-[#1C2833]/20 focus:border-[#2E4053] transition"
+                    className="w-full px-4 py-3 rounded-xl border border-[#C79A43]/25 bg-white focus:outline-none focus:ring-2 focus:ring-[#C79A43]/25 focus:border-[#C79A43] transition"
                     placeholder="Enter your name"
                     autoComplete="name"
                   />
@@ -72,7 +71,7 @@ const Contact = () => {
                   <label className="block text-sm text-[#2E4053]/80 font-medium mb-2">Email</label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 rounded-xl border border-[#AAB7B8]/30 bg-white focus:outline-none focus:ring-2 focus:ring-[#1C2833]/20 focus:border-[#2E4053] transition"
+                    className="w-full px-4 py-3 rounded-xl border border-[#C79A43]/25 bg-white focus:outline-none focus:ring-2 focus:ring-[#C79A43]/25 focus:border-[#C79A43] transition"
                     placeholder="Enter your email"
                     autoComplete="email"
                   />
@@ -81,7 +80,7 @@ const Contact = () => {
                   <label className="block text-sm text-[#2E4053]/80 font-medium mb-2">Subject</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-[#AAB7B8]/30 bg-white focus:outline-none focus:ring-2 focus:ring-[#1C2833]/20 focus:border-[#2E4053] transition"
+                    className="w-full px-4 py-3 rounded-xl border border-[#C79A43]/25 bg-white focus:outline-none focus:ring-2 focus:ring-[#C79A43]/25 focus:border-[#C79A43] transition"
                     placeholder="Enter subject"
                   />
                 </div>
@@ -89,14 +88,14 @@ const Contact = () => {
                   <label className="block text-sm text-[#2E4053]/80 font-medium mb-2">Message</label>
                   <textarea
                     rows="5"
-                    className="w-full px-4 py-3 rounded-xl border border-[#AAB7B8]/30 bg-white focus:outline-none focus:ring-2 focus:ring-[#1C2833]/20 focus:border-[#2E4053] transition"
+                    className="w-full px-4 py-3 rounded-xl border border-[#C79A43]/25 bg-white focus:outline-none focus:ring-2 focus:ring-[#C79A43]/25 focus:border-[#C79A43] transition"
                     placeholder="Enter your message"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center rounded-xl bg-[#1C2833] text-white font-semibold px-6 py-3.5 hover:bg-[#0F1A24] transition-colors shadow-lg shadow-[#1C2833]/20"
+                  className="w-full inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#0C1722] to-[#1C2833] text-white font-semibold px-6 py-3.5 hover:shadow-xl hover:shadow-[#1C2833]/20 transition-all"
                 >
                   Send Message
                 </button>
@@ -106,7 +105,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-12 bg-gradient-to-br from-[#1C2833] to-[#2E4053]">
+      <section className="py-12 bg-[#0C1722]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-2xl font-bold text-white mb-2">Visit Us in Akola</p>
           <p className="text-[#D5DBDB]/80">Shastri Nagar, Akola, Maharashtra</p>

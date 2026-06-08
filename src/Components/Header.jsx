@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FiMenu, FiX, FiPhone, FiGlobe, FiChevronDown } from 'react-icons/fi';
+import { FiX, FiPhone, FiGlobe, FiChevronDown } from 'react-icons/fi';
 import { useLanguage } from '../Context/LanguageContext';
 
 const Header = () => {
@@ -79,6 +79,7 @@ const Header = () => {
 
     // Close mobile menu on route change
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsOpen(false);
         setIsLangOpen(false);
     }, [location]);
@@ -110,9 +111,9 @@ const Header = () => {
                 <nav
                     className={`transition-all duration-500 ${
                         isScrolled
-                            ? 'bg-gray-900/95 backdrop-blur-xl shadow-2xl shadow-black/20'
-                            : 'bg-gray-900'
-                    } border-b border-gray-700`}
+                            ? 'bg-[#0C1722]/92 backdrop-blur-xl shadow-2xl shadow-black/25'
+                            : 'bg-[#0C1722]/86 backdrop-blur-md'
+                    } border-b border-[#C79A43]/15`}
                 >
                     <div className="container mx-auto px-4 sm:px-6">
                         <div className="flex justify-between items-center h-16 sm:h-20">
@@ -131,10 +132,10 @@ const Header = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-col">
-                                    <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#F4F6F6] to-[#AAB7B8]">
+                                    <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF7E2] via-[#F3D58A] to-[#D9E5E4]">
                                         Mr. Shailesh Kharote
                                     </h1>
-                                    <p className="text-[10px] sm:text-xs text-gray-400 tracking-wider uppercase hidden sm:block">
+                                    <p className="text-[10px] sm:text-xs text-[#D9E5E4]/65 tracking-wider uppercase hidden sm:block">
                                         Visionary Leader & Entrepreneur
                                     </p>
                                 </div>
@@ -150,7 +151,7 @@ const Header = () => {
                                             to={item.path}
                                             className={`relative px-5 py-2 text-sm font-medium tracking-wide transition-all duration-300 group ${
                                                 isActive
-                                                    ? 'text-gray-300'
+                                                    ? 'text-[#F3D58A]'
                                                     : 'text-white/70 hover:text-white'
                                             }`}
                                         >
@@ -158,8 +159,8 @@ const Header = () => {
                                             <span
                                                 className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] transition-all duration-300 ${
                                                     isActive
-                                                        ? 'w-full bg-gray-300'
-                                                        : 'w-0 bg-gray-500 group-hover:w-full'
+                                                        ? 'w-full bg-[#C79A43]'
+                                                        : 'w-0 bg-[#F3D58A]/70 group-hover:w-full'
                                                 }`}
                                             />
                                         </Link>
@@ -170,7 +171,7 @@ const Header = () => {
                                 <div className="relative ml-6 pl-6 border-l border-white/10">
                                     <button
                                         onClick={() => setIsLangOpen(!isLangOpen)}
-                                        className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-white/70 hover:text-gray-300 transition-all duration-300 rounded-lg hover:bg-white/5"
+                                        className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-white/70 hover:text-[#F3D58A] transition-all duration-300 rounded-lg hover:bg-white/5"
                                     >
                                         <FiGlobe size={16} />
                                         <span className="tracking-wide">{activeLanguageLabel}</span>
@@ -187,7 +188,7 @@ const Header = () => {
                                                 className="fixed inset-0 z-10"
                                                 onClick={() => setIsLangOpen(false)}
                                             />
-                                            <div className="absolute right-0 mt-2 w-40 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl shadow-black/50 backdrop-blur-xl overflow-hidden z-20 transform origin-top-right transition-all duration-200">
+                                            <div className="absolute right-0 mt-2 w-40 bg-[#0C1722]/95 border border-[#C79A43]/20 rounded-lg shadow-2xl shadow-black/50 backdrop-blur-xl overflow-hidden z-20 transform origin-top-right transition-all duration-200">
                                                 {supportedLanguages.map((option) => (
                                                     <button
                                                         key={option.code}
@@ -197,7 +198,7 @@ const Header = () => {
                                                         }}
                                                         className={`w-full text-left px-4 py-3 text-sm transition-all duration-200 hover:bg-white/5 ${
                                                             language === option.code
-                                                                ? 'text-gray-300 bg-white/5'
+                                                                ? 'text-[#F3D58A] bg-white/5'
                                                                 : 'text-white/70 hover:text-white'
                                                         }`}
                                                     >
@@ -250,7 +251,7 @@ const Header = () => {
 
                     {/* Slide-in Menu */}
                     <div
-                        className="absolute right-0 top-0 h-full w-80 bg-gray-900 shadow-2xl"
+                        className="absolute right-0 top-0 h-full w-full max-w-xs bg-[#0C1722]/98 border-l border-[#C79A43]/20 shadow-2xl"
                         onClick={(e) => e.stopPropagation()}
                         style={{ 
                             marginTop: `${translateBarHeight}px`,
@@ -287,14 +288,14 @@ const Header = () => {
                                             onClick={() => setIsOpen(false)}
                                             className={`block px-4 py-4 rounded-lg transition-all duration-300 text-sm font-medium tracking-wide ${
                                                 isActive
-                                                    ? 'bg-white/10 text-gray-300'
+                                                    ? 'bg-white/10 text-[#F3D58A]'
                                                     : 'text-white/70 hover:bg-white/5 hover:text-white'
                                             }`}
                                         >
                                             <div className="flex items-center justify-between">
                                                 <span>{item.name}</span>
                                                 {isActive && (
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-gray-300" />
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-[#C79A43]" />
                                                 )}
                                             </div>
                                         </Link>
@@ -315,7 +316,7 @@ const Header = () => {
                                             }}
                                             className={`px-3 py-2 rounded-lg text-sm transition-all duration-300 ${
                                                 language === option.code
-                                                    ? 'bg-gray-700 text-gray-300 border border-gray-600'
+                                                    ? 'bg-[#C79A43]/15 text-[#F3D58A] border border-[#C79A43]/30'
                                                     : 'text-white/60 hover:text-white border border-transparent hover:bg-white/5'
                                             }`}
                                         >
