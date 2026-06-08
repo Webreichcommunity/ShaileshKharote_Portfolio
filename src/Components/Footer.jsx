@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -8,9 +7,7 @@ import {
     FiLinkedin,
     FiTwitter,
     FiFacebook,
-    FiAward,
     FiExternalLink,
-    FiHeart
 } from 'react-icons/fi';
 
 const Footer = () => {
@@ -20,7 +17,7 @@ const Footer = () => {
         about: {
             title: "Shailesh Kharote",
             subtitle: "Visionary Leader & Entrepreneur",
-            description: "Building enduring trust through exceptional craftsmanship and transformative community leadership since 2000.",
+            description: "Rooted in karagiri since 1993, building enduring trust through handcrafted jewellery, shuddhata, pardarshakta, and community leadership.",
             social: [
                 { icon: FiLinkedin, href: "#", label: "LinkedIn" },
                 { icon: FiTwitter, href: "#", label: "Twitter" },
@@ -48,12 +45,12 @@ const Footer = () => {
     };
 
     return (
-        <footer className="relative bg-[#0F1A24]">
+        <footer className="relative bg-[#0C1722]">
             {/* Top Gradient Border */}
-            <div className="h-px bg-gradient-to-r from-transparent via-[#AAB7B8]/30 to-transparent"></div>
+            <div className="h-px bg-gradient-to-r from-transparent via-[#C79A43]/55 to-transparent"></div>
 
             {/* Subtle Background Pattern */}
-            <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#AAB7B8_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+            <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(90deg,#F3D58A_1px,transparent_1px),linear-gradient(0deg,#F3D58A_1px,transparent_1px)] bg-[size:34px_34px]"></div>
 
             {/* Main Footer Content */}
             <div className="relative container mx-auto px-6 lg:px-10 py-16">
@@ -68,20 +65,20 @@ const Footer = () => {
                     >
                         <div className="space-y-4">
                             <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-12 h-12 rounded-full flex items-center justify-center border border-[#AAB7B8]/30 bg-white/5 overflow-hidden">
+                                <div className="w-12 h-12 rounded-full flex items-center justify-center border border-[#C79A43]/35 bg-white/5 overflow-hidden">
                                     <img src="/logo.png" alt="Logo" className="w-full h-full object-cover rounded-full" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#F4F6F6] to-[#AAB7B8]">
+                                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF7E2] via-[#F3D58A] to-[#D9E5E4]">
                                         {footerSections.about.title}
                                     </h3>
-                                    <p className="text-xs text-[#AAB7B8]/70 font-medium tracking-wider uppercase">
+                                    <p className="text-xs text-[#D9E5E4]/70 font-medium tracking-wider uppercase">
                                         {footerSections.about.subtitle}
                                     </p>
                                 </div>
                             </div>
 
-                            <p className="text-[#D5DBDB]/70 leading-relaxed text-sm">
+                            <p className="text-[#D9E5E4]/70 leading-relaxed text-sm">
                                 {footerSections.about.description}
                             </p>
 
@@ -94,9 +91,9 @@ const Footer = () => {
                                         aria-label={social.label}
                                         whileHover={{ scale: 1.15 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="w-10 h-10 bg-white/5 border border-[#AAB7B8]/20 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-[#AAB7B8]/40 transition-all duration-300 group"
+                                        className="w-10 h-10 bg-white/5 border border-[#C79A43]/20 rounded-xl flex items-center justify-center hover:bg-[#C79A43]/10 hover:border-[#C79A43]/45 transition-all duration-300 group"
                                     >
-                                        <social.icon className="text-[#AAB7B8] group-hover:text-[#F4F6F6] transition-colors duration-300 text-lg" />
+                                        <social.icon className="text-[#F3D58A] group-hover:text-[#FFF7E2] transition-colors duration-300 text-lg" />
                                     </motion.a>
                                 ))}
                             </div>
@@ -111,7 +108,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                     >
                         <h4 className="text-[#F4F6F6] font-semibold mb-6 flex items-center space-x-2">
-                            <span className="w-8 h-px bg-gradient-to-r from-[#AAB7B8]/50 to-transparent"></span>
+                            <span className="w-8 h-px bg-gradient-to-r from-[#C79A43]/70 to-transparent"></span>
                             <span className="text-sm tracking-wider uppercase">Navigation</span>
                         </h4>
                         <ul className="space-y-3">
@@ -119,9 +116,9 @@ const Footer = () => {
                                 <li key={index}>
                                     <Link
                                         to={link.path}
-                                        className="group flex items-center text-[#D5DBDB]/60 hover:text-[#AAB7B8] transition-all duration-300 text-sm"
+                                        className="group flex items-center text-[#D9E5E4]/60 hover:text-[#F3D58A] transition-all duration-300 text-sm"
                                     >
-                                        <span className="w-0 group-hover:w-2 h-px bg-[#AAB7B8] transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                                        <span className="w-0 group-hover:w-2 h-px bg-[#C79A43] transition-all duration-300 mr-0 group-hover:mr-2"></span>
                                         <span className="group-hover:translate-x-1 transition-transform duration-300">
                                             {link.name}
                                         </span>
@@ -139,7 +136,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                     >
                         <h4 className="text-[#F4F6F6] font-semibold mb-6 flex items-center space-x-2">
-                            <span className="w-8 h-px bg-gradient-to-r from-[#AAB7B8]/50 to-transparent"></span>
+                            <span className="w-8 h-px bg-gradient-to-r from-[#C79A43]/70 to-transparent"></span>
                             <span className="text-sm tracking-wider uppercase">Leadership Roles</span>
                         </h4>
                         <ul className="space-y-3">
@@ -152,8 +149,8 @@ const Footer = () => {
                                     viewport={{ once: true }}
                                     className="flex items-start space-x-3 group"
                                 >
-                                    <div className="w-1.5 h-1.5 bg-[#AAB7B8]/40 rounded-full mt-2 flex-shrink-0 group-hover:bg-[#AAB7B8] transition-colors duration-300"></div>
-                                    <span className="text-[#D5DBDB]/60 text-sm leading-relaxed group-hover:text-[#D5DBDB]/80 transition-colors duration-300">
+                                    <div className="w-1.5 h-1.5 bg-[#C79A43]/50 rounded-full mt-2 flex-shrink-0 group-hover:bg-[#F3D58A] transition-colors duration-300"></div>
+                                    <span className="text-[#D9E5E4]/60 text-sm leading-relaxed group-hover:text-[#D9E5E4]/85 transition-colors duration-300">
                                         {position}
                                     </span>
                                 </motion.li>
@@ -169,7 +166,7 @@ const Footer = () => {
                         viewport={{ once: true }}
                     >
                         <h4 className="text-[#F4F6F6] font-semibold mb-6 flex items-center space-x-2">
-                            <span className="w-8 h-px bg-gradient-to-r from-[#AAB7B8]/50 to-transparent"></span>
+                            <span className="w-8 h-px bg-gradient-to-r from-[#C79A43]/70 to-transparent"></span>
                             <span className="text-sm tracking-wider uppercase">Get in Touch</span>
                         </h4>
                         <ul className="space-y-5">
@@ -178,17 +175,17 @@ const Footer = () => {
                                     {item.href ? (
                                         <a
                                             href={item.href}
-                                            className="group flex items-start space-x-3 text-[#D5DBDB]/60 hover:text-[#AAB7B8] transition-all duration-300 text-sm"
+                                            className="group flex items-start space-x-3 text-[#D9E5E4]/60 hover:text-[#F3D58A] transition-all duration-300 text-sm"
                                         >
-                                            <div className="w-8 h-8 bg-white/5 border border-[#AAB7B8]/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/10 group-hover:border-[#AAB7B8]/40 transition-all duration-300">
-                                                <item.icon className="text-[#AAB7B8] group-hover:text-[#F4F6F6] transition-colors duration-300 text-sm" />
+                                            <div className="w-8 h-8 bg-white/5 border border-[#C79A43]/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#C79A43]/10 group-hover:border-[#C79A43]/40 transition-all duration-300">
+                                                <item.icon className="text-[#F3D58A] group-hover:text-[#FFF7E2] transition-colors duration-300 text-sm" />
                                             </div>
                                             <span className="pt-1 leading-relaxed">{item.text}</span>
                                         </a>
                                     ) : (
-                                        <div className="flex items-start space-x-3 text-[#D5DBDB]/60 text-sm group">
-                                            <div className="w-8 h-8 bg-white/5 border border-[#AAB7B8]/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                                <item.icon className="text-[#AAB7B8] text-sm" />
+                                        <div className="flex items-start space-x-3 text-[#D9E5E4]/60 text-sm group">
+                                            <div className="w-8 h-8 bg-white/5 border border-[#C79A43]/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <item.icon className="text-[#F3D58A] text-sm" />
                                             </div>
                                             <span className="pt-1 leading-relaxed">{item.text}</span>
                                         </div>
@@ -202,7 +199,7 @@ const Footer = () => {
 
             {/* Bottom Bar */}
             <div className="relative">
-                <div className="h-px bg-gradient-to-r from-transparent via-[#AAB7B8]/20 to-transparent"></div>
+                <div className="h-px bg-gradient-to-r from-transparent via-[#C79A43]/30 to-transparent"></div>
 
                 <div className="container mx-auto px-6 lg:px-10 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
@@ -211,7 +208,7 @@ const Footer = () => {
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="text-[#D5DBDB]/40 text-xs tracking-wider"
+                            className="text-[#D9E5E4]/40 text-xs tracking-wider"
                         >
                             © {currentYear} Shailesh Kharote. All rights reserved.
                         </motion.p>
@@ -221,16 +218,16 @@ const Footer = () => {
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="flex items-center space-x-2 text-[#D5DBDB]/40 text-xs tracking-wider"
+                            className="flex items-center space-x-2 text-[#D9E5E4]/40 text-xs tracking-wider"
                         >
                             <span>Designed & Developed by</span>
                             <a
                                 href="https://webreich.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group flex items-center space-x-1.5 text-[#AAB7B8]/60 hover:text-[#AAB7B8] transition-all duration-300 font-medium"
+                                className="group flex items-center space-x-1.5 text-[#F3D58A]/70 hover:text-[#F3D58A] transition-all duration-300 font-medium"
                             >
-                                <span className="text-[#AAB7B8] italic">WebReich</span>
+                                <span className="text-[#F3D58A] italic">WebReich</span>
                                 <FiExternalLink className="text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                             </a>
                         </motion.div>

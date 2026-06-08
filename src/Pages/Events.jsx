@@ -1,12 +1,11 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { events } from '../Data/content';
-import { FiCalendar, FiImage } from 'react-icons/fi';
+import { FiImage } from 'react-icons/fi';
 import PageHero from '../Components/PageHero';
 
 const Events = () => {
   return (
-    <div className="bg-[#F4F6F6]">
+    <div className="section-surface">
       <PageHero
         title="Events & Awards"
         subtitle="Key moments of achievement, recognition, and community engagement."
@@ -22,26 +21,22 @@ const Events = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.6, ease: 'easeOut', delay: Math.min(idx * 0.06, 0.24) }}
-                className="bg-white rounded-2xl shadow-xl shadow-[#1C2833]/5 border border-[#AAB7B8]/10 overflow-hidden hover:shadow-2xl hover:shadow-[#1C2833]/10 transition-shadow"
+                className="premium-panel rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-[#1C2833]/10 transition-all hover:-translate-y-1"
               >
                 <div className="relative overflow-hidden">
                   {event.image ? (
                     <img
                       src={event.image}
                       alt={event.title}
-                      className="h-48 w-full object-cover"
+                      className="h-48 w-full object-cover image-lift"
                       loading="lazy"
                       decoding="async"
                     />
                   ) : (
-                    <div className="h-48 bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center">
+                    <div className="h-48 bg-gradient-to-br from-[#FFF7E2] to-[#D9E5E4] flex items-center justify-center">
                       <FiImage className="text-[#2E4053]/50" size={44} />
                     </div>
                   )}
-
-                  <div className="absolute top-4 right-4 bg-[#1C2833]/90 text-white px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-2 backdrop-blur-sm border border-white/10">
-                    <FiCalendar /> {event.date}
-                  </div>
                 </div>
 
                 <div className="p-6">

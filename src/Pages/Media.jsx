@@ -1,11 +1,10 @@
-import React from 'react';
 import MediaCard from '../Components/MediaCard';
 import { mediaLinks } from '../Data/content';
 import PageHero from '../Components/PageHero';
 
 const Media = () => {
   return (
-    <div className="bg-[#F4F6F6]">
+    <div className="section-surface">
       <PageHero title="Media Coverage" subtitle="News, interviews, and articles featuring milestones and impact." />
 
       {/* Media Grid */}

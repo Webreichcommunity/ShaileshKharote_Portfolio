@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight, FiAward, FiCalendar } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiAward } from 'react-icons/fi';
+
+const itemsPerPage = {
+  mobile: 1,
+  tablet: 2,
+  desktop: 3
+};
 
 const AwardsSlider = ({ awards = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [direction, setDirection] = useState(0);
-  
-  const itemsPerPage = {
-    mobile: 1,
-    tablet: 2,
-    desktop: 3
-  };
 
   const getItemsPerPage = useCallback(() => {
     if (windowWidth < 640) return itemsPerPage.mobile;
@@ -47,8 +47,10 @@ const AwardsSlider = ({ awards = [] }) => {
 
   const getVisibleAwards = () => {
     const visibleItems = [];
-    for (let i = 0; i < currentItemsPerPage; i++) {
-      visibleItems.push(awards[(currentIndex + i) % awards.length]);
+    const visibleCount = Math.min(currentItemsPerPage, awards.length);
+    for (let i = 0; i < visibleCount; i++) {
+      const award = awards[currentIndex + i];
+      if (award) visibleItems.push(award);
     }
     return visibleItems;
   };
@@ -84,16 +86,6 @@ const AwardsSlider = ({ awards = [] }) => {
       }
     }),
   };
-
-  // Sample images array - replace with your actual images
-  const awardImages = [
-    'https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778677767/WhatsApp_Image_2026-05-12_at_4.48.03_PM_zkomrg.jpg',
-    'https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778677767/WhatsApp_Image_2026-05-12_at_4.48.00_PM_t9otkn.jpg',
-    'https://res.cloudinary.com/dvfa1ub9w/image/upload/v1778677767/WhatsApp_Image_2026-05-12_at_4.48.04_PM_alw55f.jpg',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1608501078713-8e445a709b39?w=400&h=300&fit=crop',
-    'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=400&h=300&fit=crop',
-  ];
 
   return (
     <div className="relative py-8">
@@ -131,7 +123,6 @@ const AwardsSlider = ({ awards = [] }) => {
               <AwardCard 
                 key={`${currentIndex}-${index}`} 
                 award={award}
-                image={awardImages[(currentIndex + index) % awardImages.length]}
                 index={index} 
               />
             ))}
@@ -148,8 +139,8 @@ const AwardsSlider = ({ awards = [] }) => {
               onClick={() => goToSlide(index)}
               className={`transition-all duration-300 rounded-full ${
                 Math.floor(currentIndex / currentItemsPerPage) === index
-                  ? 'w-8 h-2.5 bg-gray-800'
-                  : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'
+                  ? 'w-8 h-2.5 bg-[#C79A43]'
+                  : 'w-2.5 h-2.5 bg-[#C79A43]/25 hover:bg-[#C79A43]/45'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -167,61 +158,37 @@ const NavButton = ({ direction, onClick }) => (
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.95 }}
     className={`absolute top-1/2 -translate-y-1/2 z-20 bg-white shadow-lg rounded-xl p-3 
-               hover:shadow-xl border border-gray-200 transition-all duration-300
+               hover:shadow-xl border border-[#C79A43]/20 transition-all duration-300
                ${direction === 'left' ? 'left-0' : 'right-0'}`}
     aria-label={`${direction === 'left' ? 'Previous' : 'Next'} awards`}
   >
     {direction === 'left' ? (
-      <FiChevronLeft className="w-5 h-5 text-gray-700" />
+      <FiChevronLeft className="w-5 h-5 text-[#1C2833]" />
     ) : (
-      <FiChevronRight className="w-5 h-5 text-gray-700" />
+      <FiChevronRight className="w-5 h-5 text-[#1C2833]" />
     )}
   </motion.button>
 );
 
 // Award Card Component
-const AwardCard = ({ award, image, index }) => (
+const AwardCard = ({ award, index }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4, delay: index * 0.1 }}
     className="h-full"
   >
-    <div className="h-full bg-white rounded-2xl border border-gray-200 shadow-lg 
-                   hover:shadow-xl transition-all duration-300 overflow-hidden">
-      
-      {/* Image Section */}
-      <div className="relative h-48 overflow-hidden">
-        <img 
-          src={image} 
-          alt={award}
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = 'https://via.placeholder.com/400x300?text=Award';
-          }}
-        />
-        <div className="absolute top-3 left-3">
-          <span className="inline-flex items-center px-2.5 py-1 bg-white/90 backdrop-blur-sm 
-                         rounded-lg text-xs font-medium text-gray-700">
-            <FiAward className="w-3.5 h-3.5 mr-1" />
-            Award
-          </span>
+    <div className="h-full premium-panel rounded-2xl hover:shadow-xl transition-all duration-300 overflow-hidden">
+      <div className="p-7">
+        <div className="w-14 h-14 rounded-2xl bg-[#C79A43]/12 border border-[#C79A43]/20 flex items-center justify-center mb-6">
+          <FiAward className="w-7 h-7 text-[#B8872E]" />
         </div>
-      </div>
 
-      {/* Content Section */}
-      <div className="p-5">
-        <div className="flex items-center text-gray-500 text-sm mb-3">
-          <FiCalendar className="w-4 h-4 mr-1.5" />
-          <span>2024</span>
-        </div>
-        
-        <h3 className="text-lg font-semibold text-gray-900 mb-2 leading-snug">
+        <h3 className="text-lg font-semibold text-[#13202B] mb-2 leading-snug">
           {award}
         </h3>
         
-        <p className="text-sm text-gray-600 leading-relaxed">
+        <p className="text-sm text-[#52606D] leading-relaxed">
           Recognizing outstanding contribution to business excellence and community leadership.
         </p>
       </div>

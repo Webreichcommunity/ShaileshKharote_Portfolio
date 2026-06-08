@@ -1,7 +1,8 @@
-import React, { createContext, useState, useContext, useEffect, useMemo } from 'react';
+import { createContext, useState, useContext, useEffect, useMemo } from 'react';
 
 const LanguageContext = createContext();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
@@ -29,7 +30,6 @@ export const LanguageProvider = ({ children }) => {
     if (document.getElementById('google-translate-script')) return;
 
     window.googleTranslateElementInit = () => {
-      // eslint-disable-next-line no-new
       new window.google.translate.TranslateElement(
         {
           pageLanguage: 'en',
@@ -68,6 +68,7 @@ export const LanguageProvider = ({ children }) => {
   useEffect(() => {
     const savedLang = localStorage.getItem('preferredLanguage');
     const initialLang = supportedLanguages.some((l) => l.code === savedLang) ? savedLang : 'en';
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLanguage(initialLang);
 
     // Load Google Translate early so switching feels instant.
