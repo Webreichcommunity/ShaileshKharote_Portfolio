@@ -111,8 +111,8 @@ const Header = () => {
                 <nav
                     className={`transition-all duration-500 ${
                         isScrolled
-                            ? 'bg-[#0C1722]/92 backdrop-blur-xl shadow-2xl shadow-black/25'
-                            : 'bg-[#0C1722]/86 backdrop-blur-md'
+                            ? 'bg-black shadow-2xl shadow-black/25'
+                            : 'bg-black'
                     } border-b border-[#C79A43]/15`}
                 >
                     <div className="container mx-auto px-4 sm:px-6">
@@ -251,7 +251,7 @@ const Header = () => {
 
                     {/* Slide-in Menu */}
                     <div
-                        className="absolute right-0 top-0 h-full w-full max-w-xs bg-[#0C1722]/98 border-l border-[#C79A43]/20 shadow-2xl"
+                        className="absolute right-0 top-0 h-full w-full max-w-xs bg-black border-l border-[#C79A43]/20 shadow-2xl"
                         onClick={(e) => e.stopPropagation()}
                         style={{ 
                             marginTop: `${translateBarHeight}px`,
@@ -329,7 +329,7 @@ const Header = () => {
                                 <div className="mt-6 pt-6 border-t border-gray-800">
                                     <div className="flex items-center text-gray-500 text-sm">
                                         <FiPhone className="mr-2 text-gray-400" size={14} />
-                                        <span>+91 9422162990</span>
+                                        <span>+91 7242423726</span>
                                     </div>
                                 </div>
                             </div>
