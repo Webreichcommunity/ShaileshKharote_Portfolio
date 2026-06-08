@@ -5,8 +5,8 @@ import PageHero from '../Components/PageHero';
 
 const Contact = () => {
   const contactInfo = [
-    { icon: FiPhone, label: 'Phone', value: personalInfo.mobile, href: 'tel:+919422162990' },
-    { icon: FiMail, label: 'Email', value: 'contact@sskharote.com', href: 'mailto:contact@sskharote.com' },
+    { icon: FiPhone, label: 'Phone', value: personalInfo.mobile, href: 'tel:+917242423726' },
+    { icon: FiMail, label: 'Email', value: 'sskharotepvtltd@gmail.com', href: 'mailto:sskharotepvtltd@gmail.com' },
     { icon: FiMapPin, label: 'Address', value: personalInfo.address },
     { icon: FiClock, label: 'Business Hours', value: 'Mon–Sat: 10:00 AM – 8:00 PM' },
   ];

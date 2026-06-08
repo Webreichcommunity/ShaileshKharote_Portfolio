@@ -329,7 +329,7 @@ const Header = () => {
                                 <div className="mt-6 pt-6 border-t border-gray-800">
                                     <div className="flex items-center text-gray-500 text-sm">
                                         <FiPhone className="mr-2 text-gray-400" size={14} />
-                                        <span>+91 9422162990</span>
+                                        <span>+91 7242423726</span>
                                     </div>
                                 </div>
                             </div>
