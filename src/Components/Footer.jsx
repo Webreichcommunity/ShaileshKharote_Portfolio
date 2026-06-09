@@ -39,7 +39,7 @@ const Footer = () => {
         ],
         contact: [
             { icon: FiMapPin, text: "\"Raj Rajeshwar Krupa\", Shastri Nagar, Akola", href: null },
-            { icon: FiPhone, text: "+91 7242423726", href: "tel:+917242423726" },
+            { icon: FiPhone, text: "+91 8888908884", href: "tel:+918888908884" },
             { icon: FiMail, text: "sskharotepvtltd@gmail.com", href: "mailto:sskharotepvtltd@gmail.com" },
         ]
     };

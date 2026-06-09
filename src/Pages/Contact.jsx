@@ -1,15 +1,34 @@
 import { motion } from 'framer-motion';
 import { personalInfo } from '../Data/content';
-import { FiClock, FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import { FiClock, FiMail, FiMapPin, FiPhone, FiSend } from 'react-icons/fi';
 import PageHero from '../Components/PageHero';
 
 const Contact = () => {
+  const contactPhone = personalInfo.mobile.replace(/\D/g, '');
+  const contactPhoneHref = `tel:+${contactPhone}`;
+
   const contactInfo = [
-    { icon: FiPhone, label: 'Phone', value: personalInfo.mobile, href: 'tel:+917242423726' },
+    { icon: FiPhone, label: 'Phone', value: personalInfo.mobile, href: contactPhoneHref },
     { icon: FiMail, label: 'Email', value: 'sskharotepvtltd@gmail.com', href: 'mailto:sskharotepvtltd@gmail.com' },
     { icon: FiMapPin, label: 'Address', value: personalInfo.address },
     { icon: FiClock, label: 'Business Hours', value: 'Mon–Sat: 10:00 AM – 8:00 PM' },
   ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const inquiryMessage = [
+      'New inquiry from website:',
+      `Name: ${formData.get('name')}`,
+      `Email: ${formData.get('email')}`,
+      `Subject: ${formData.get('subject')}`,
+      `Message: ${formData.get('message')}`,
+    ].join('\n');
+
+    window.open(`https://wa.me/${contactPhone}?text=${encodeURIComponent(inquiryMessage)}`, '_blank', 'noopener,noreferrer');
+    e.currentTarget.reset();
+  };
 
   return (
     <div className="section-surface">
@@ -57,39 +76,47 @@ const Contact = () => {
                 Share a brief note and we’ll get back to you as soon as possible.
               </p>
 
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm text-[#2E4053]/80 font-medium mb-2">Full Name</label>
                   <input
+                    name="name"
                     type="text"
                     className="w-full px-4 py-3 rounded-xl border border-[#C79A43]/25 bg-white focus:outline-none focus:ring-2 focus:ring-[#C79A43]/25 focus:border-[#C79A43] transition"
                     placeholder="Enter your name"
                     autoComplete="name"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-sm text-[#2E4053]/80 font-medium mb-2">Email</label>
                   <input
+                    name="email"
                     type="email"
                     className="w-full px-4 py-3 rounded-xl border border-[#C79A43]/25 bg-white focus:outline-none focus:ring-2 focus:ring-[#C79A43]/25 focus:border-[#C79A43] transition"
                     placeholder="Enter your email"
                     autoComplete="email"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-sm text-[#2E4053]/80 font-medium mb-2">Subject</label>
                   <input
+                    name="subject"
                     type="text"
                     className="w-full px-4 py-3 rounded-xl border border-[#C79A43]/25 bg-white focus:outline-none focus:ring-2 focus:ring-[#C79A43]/25 focus:border-[#C79A43] transition"
                     placeholder="Enter subject"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-sm text-[#2E4053]/80 font-medium mb-2">Message</label>
                   <textarea
+                    name="message"
                     rows="5"
                     className="w-full px-4 py-3 rounded-xl border border-[#C79A43]/25 bg-white focus:outline-none focus:ring-2 focus:ring-[#C79A43]/25 focus:border-[#C79A43] transition"
                     placeholder="Enter your message"
+                    required
                   />
                 </div>
 
@@ -97,6 +124,7 @@ const Contact = () => {
                   type="submit"
                   className="w-full inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#0C1722] to-[#1C2833] text-white font-semibold px-6 py-3.5 hover:shadow-xl hover:shadow-[#1C2833]/20 transition-all"
                 >
+                  <FiSend className="mr-2" size={18} />
                   Send Message
                 </button>
               </form>
