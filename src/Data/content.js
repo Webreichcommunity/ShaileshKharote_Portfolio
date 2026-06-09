@@ -3,7 +3,7 @@ export const personalInfo = {
   nameMr: "श्री शैलेश सुधाकरराव खरोटे",
   address: '"Raj Rajeshwar Krupa", Shastri Nagar, Akola, Maharashtra',
   addressMr: '"राज राजेश्वर कृपा", शास्त्री नगर, अकोला, अकोला',
-  mobile: "+91 7242423726",
+  mobile: "+91 8888908884",
   birthDate: "05 December 1969",
   caste: "Sonar (Gold Smith)",
   casteMr: "सोनार",

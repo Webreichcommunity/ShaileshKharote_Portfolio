@@ -136,7 +136,7 @@ const Header = () => {
                                         Mr. Shailesh Kharote
                                     </h1>
                                     <p className="text-[10px] sm:text-xs text-[#D9E5E4]/65 tracking-wider uppercase hidden sm:block">
-                                        Visionary Leader & Entrepreneur
+                                       Business Visionary Leader & Entrepreneur
                                     </p>
                                 </div>
                             </Link>
@@ -329,7 +329,7 @@ const Header = () => {
                                 <div className="mt-6 pt-6 border-t border-gray-800">
                                     <div className="flex items-center text-gray-500 text-sm">
                                         <FiPhone className="mr-2 text-gray-400" size={14} />
-                                        <span>+91 7242423726</span>
+                                        <span>+91 8888908884</span>
                                     </div>
                                 </div>
                             </div>
